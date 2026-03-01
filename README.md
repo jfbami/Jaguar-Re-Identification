@@ -5,7 +5,7 @@ A deep learning pipeline for identifying individual jaguars from camera trap ima
 ## 🌟 Highlights
 
 - **5-fold ensemble inference** with StratifiedGroupKFold cross-validation for robust predictions
-- **ConvNeXt Base + ArcFace** architecture for powerful metric learning on finegrained visual features
+- **ConvNeXt Base + ArcFace** architecture for powerful metric learning on fine-grained visual features
 - **Near-duplicate detection** using perceptual hashing to prevent data leakage from camera trap burst photos
 - **k-Reciprocal Re-ranking** to boost similarity scores between mutually similar image pairs
 - **Carefully tuned augmentation** that respects the asymmetric nature of jaguar rosette patterns
@@ -131,8 +131,21 @@ Camera traps capture burst sequences of near-identical images. A naive random sp
 
 Rather than relying on a single fold's model, we extract embeddings from all 5 fold models and average them. This reduces variance and typically yields a 1-3% score improvement over any individual fold.
 
+## 📚 References
+
+This project builds on the following research:
+
+| Method | Paper | Authors | Venue |
+|--------|-------|---------|-------|
+| ArcFace | [ArcFace: Additive Angular Margin Loss for Deep Face Recognition](https://arxiv.org/abs/1801.07698) | Deng et al. | CVPR 2019 |
+| k-Reciprocal Re-ranking | [Re-ranking Person Re-identification with k-Reciprocal Encoding](https://arxiv.org/abs/1701.08398) | Zhong et al. | CVPR 2017 |
+| ConvNeXt | [A ConvNet for the 2020s](https://arxiv.org/abs/2201.03545) | Liu et al. | CVPR 2022 |
+| Cosine Annealing LR | [SGDR: Stochastic Gradient Descent with Warm Restarts](https://arxiv.org/abs/1608.03983) | Loshchilov & Hutter | ICLR 2017 |
+| Label Smoothing | [Rethinking the Inception Architecture for Computer Vision](https://arxiv.org/abs/1512.00567) | Szegedy et al. | CVPR 2016 |
+| Perceptual Hashing | [Implementation and Benchmarking of Perceptual Image Hash Functions](https://www.phash.org/docs/pubs/thesis_zauner.pdf) | Zauner | 2010 |
+| StratifiedGroupKFold | [Scikit-learn: Machine Learning in Python](https://arxiv.org/abs/1201.0490) | Pedregosa et al. | JMLR 2011 |
+
 ## ✍️ Author
 
 **jfbami** — Built for the Jaguar Re-Identification competition on Kaggle.
-https://www.kaggle.com/competitions/jaguar-re-id/overview
 
