@@ -1,0 +1,16 @@
+# Data (too large for git)
+data/train_384x384/
+data/test_384x384/
+*.pth
+
+# Submissions
+submissions/
+
+# Python
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# IDE
+.vscode/
+.idea/
