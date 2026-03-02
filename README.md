@@ -149,3 +149,5 @@ This project builds on the following research:
 
 **jfbami** — Built for the Jaguar Re-Identification competition on Kaggle.
 
+https://www.kaggle.com/competitions/jaguar-re-id
+
