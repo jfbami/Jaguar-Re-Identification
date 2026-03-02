@@ -4,7 +4,7 @@ A deep learning pipeline for identifying individual jaguars from camera trap ima
 
 ## 🌟 Highlights
 
-- **5-fold ensemble inference** with StratifiedGroupKFold cross-validation for robust predictions
+- **5-fold ensemble inference** with StratifiedGroupKFold cross-validation for predictions
 - **ConvNeXt Base + ArcFace** architecture for powerful metric learning on fine-grained visual features
 - **Near-duplicate detection** using perceptual hashing to prevent data leakage from camera trap burst photos
 - **k-Reciprocal Re-ranking** to boost similarity scores between mutually similar image pairs
