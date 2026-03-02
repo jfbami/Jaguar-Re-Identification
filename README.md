@@ -12,10 +12,8 @@ A deep learning pipeline for identifying individual jaguars from camera trap ima
 
 ## ℹ️ Overview
 
-Camera traps capture thousands of jaguar images in the wild, but identifying *which* jaguar is in each photo is critical for conservation monitoring and population tracking. This project tackles that challenge using a Re-Identification (ReID) approach — training a model to produce embeddings where images of the same jaguar are close together and different jaguars are far apart.
-
 The pipeline handles many challenges specific to camera trap data:
-- **Burst photos**: Camera traps fire in rapid succession, producing near-identical images that can leak across train/val splits if not grouped
+- **Burst photos**: Camera traps fire in rapid succession, creating almost identical images that can leak across train/val splits if not grouped
 - **Class imbalance**: Some jaguars have 180+ images while others have fewer than 15
 - **Asymmetric patterns**: Jaguar rosette patterns differ between left and right flanks, so horizontal flipping is intentionally excluded from augmentation
 
