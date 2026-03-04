@@ -2,7 +2,7 @@
 
 A deep learning pipeline for identifying individual jaguars from camera trap images using metric learning and ensemble inference.
 
-## 🌟 Highlights
+##  Highlights
 
 - **5-fold ensemble inference** with StratifiedGroupKFold cross-validation for predictions
 - **ConvNeXt Base + ArcFace** architecture for powerful metric learning on fine-grained visual features
@@ -10,7 +10,7 @@ A deep learning pipeline for identifying individual jaguars from camera trap ima
 - **k-Reciprocal Re-ranking** to boost similarity scores between mutually similar image pairs
 - **Carefully tuned augmentation** that respects the asymmetric nature of jaguar rosette patterns
 
-## ℹ️ Overview
+##  Overview
 
 The pipeline handles many challenges specific to camera trap data:
 - **Burst photos**: Camera traps fire in rapid succession, creating almost identical images that can leak across train/val splits if not grouped
@@ -23,7 +23,7 @@ The pipeline handles many challenges specific to camera trap data:
 2. **Inference**: All 5 fold models extract embeddings independently. Embeddings are averaged across folds and L2-normalized, then k-Reciprocal Re-ranking refines the similarity matrix.
 3. **Submission**: Pairwise similarity scores are computed for all query-gallery pairs and exported as a CSV.
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -68,7 +68,7 @@ python main.py
 
 Loads all 5 fold checkpoints, extracts ensemble embeddings, applies re-ranking, and outputs `submission.csv`.
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 ├── data/                   # Training & test data
@@ -86,7 +86,7 @@ Loads all 5 fold checkpoints, extracts ensemble embeddings, applies re-ranking, 
 └── preprocess_images.py    # Image preprocessing utilities
 ```
 
-## ⚙️ Configuration
+##  Configuration
 
 Key settings in `config.py`:
 
@@ -107,7 +107,7 @@ Training settings in `train.py`:
 | `N_FOLDS` | `5` | Cross-validation folds |
 | `PHASH_THRESHOLD` | `8` | Hamming distance for burst grouping |
 
-## 🧠 Technical Details
+##  Technical Details
 
 ### Augmentation Pipeline
 
@@ -129,7 +129,7 @@ Camera traps capture burst sequences of near-identical images. A naive random sp
 
 Rather than relying on a single fold's model, we extract embeddings from all 5 fold models and average them. This reduces variance and typically yields a 1-3% score improvement over any individual fold.
 
-## 📚 References
+##  References
 
 This project builds on the following research:
 
@@ -143,7 +143,7 @@ This project builds on the following research:
 | Perceptual Hashing | [Implementation and Benchmarking of Perceptual Image Hash Functions](https://www.phash.org/docs/pubs/thesis_zauner.pdf) | Zauner | 2010 |
 | StratifiedGroupKFold | [Scikit-learn: Machine Learning in Python](https://arxiv.org/abs/1201.0490) | Pedregosa et al. | JMLR 2011 |
 
-## ✍️ Author
+##  Author
 
 **jfbami** — Built for the Jaguar Re-Identification competition on Kaggle.
 
