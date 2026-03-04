@@ -6,9 +6,9 @@ A deep learning pipeline for identifying individual jaguars from camera trap ima
 
 - **5-fold ensemble inference** with StratifiedGroupKFold cross-validation for predictions
 - **ConvNeXt Base + ArcFace** architecture for powerful metric learning on fine-grained visual features
-- **Near-duplicate detection** using perceptual hashing to prevent data leakage from camera trap burst photos
+- **Near duplicate detection** using perceptual hashing to prevent data leakage from camera trap burst photos
 - **k-Reciprocal Re-ranking** to boost similarity scores between mutually similar image pairs
-- **Carefully tuned augmentation** that respects the asymmetric nature of jaguar rosette patterns
+- ** tuned augmentation** that respects the asymmetric nature of jaguar rosette patterns
 
 ##  Overview
 
@@ -117,11 +117,11 @@ ColorJitter(b=0.3, c=0.3, s=0.2, h=0.05)  # Handles lighting variation
 RandomGrayscale(p=0.1)                      # Robustness to color shifts
 ```
 
-**No horizontal flip** — jaguar rosette patterns are unique to each flank. Flipping would teach the model to confuse left and right sides of the same individual.
+**No horizontal flip**. Jaguar rosette patterns are unique to each flank. Flipping would teach the model to confuse left and right sides of the same individual.
 
 ### Why StratifiedGroupKFold?
 
-Camera traps capture burst sequences of near-identical images. A naive random split would leak these across train/val, inflating validation scores. Perceptual hashing (pHash) clusters burst photos into groups, and StratifiedGroupKFold ensures:
+Camera traps capture burst sequences of near identical images. A naive random split would leak these across train/val, inflating validation scores. Perceptual hashing (pHash) clusters burst photos into groups, and StratifiedGroupKFold ensures:
 - All burst images stay in the same fold
 - Each fold has a proportional share of every jaguar class
 
