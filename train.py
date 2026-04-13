@@ -17,10 +17,6 @@ from tqdm.auto import tqdm
 from config import Config
 from models import JaguarReIDModel
 
-
-# ──────────────────────────────────────────────
-# 1.  TRAINING CONFIG  (tweak these as needed)
-# ──────────────────────────────────────────────
 TRAIN_CSV      = Config.TRAIN_CSV
 TRAIN_IMG_DIR  = Config.TRAIN_IMG_DIR
 
@@ -39,10 +35,8 @@ SEED           = 42
 # Near-duplicate grouping
 PHASH_THRESHOLD = 8   # hamming distance <= this → same group
 
-
-# ──────────────────────────────────────────────
 # 2.  DATASET
-# ──────────────────────────────────────────────
+
 def crop_alphachannel(img: Image.Image) -> Image.Image:
     if img.mode in ('RGBA', 'LA') or (img.mode == 'P' and 'transparency' in img.info):
         bbox = img.getbbox()
@@ -97,14 +91,11 @@ def get_val_transform():
                              std =[0.229, 0.224, 0.225]),
     ])
 
-
-# ──────────────────────────────────────────────
 # 3.  GROUPING & FOLD ASSIGNMENT
-# ──────────────────────────────────────────────
+
 def assign_groups(df, img_dir, threshold=PHASH_THRESHOLD):
     """
     Derive burst groups via perceptual hashing.
-
     Images of the same jaguar with hamming distance <= threshold
     are clustered into the same group (connected components).
     This prevents near-duplicate leakage across folds.
