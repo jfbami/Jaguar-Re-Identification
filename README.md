@@ -127,7 +127,7 @@ Camera traps capture burst sequences of near identical images. A naive random sp
 
 ### Ensemble Inference
 
-Rather than relying on a single fold's model, we extract embeddings from all 5 fold models and average them. This reduces variance and typically yields a 1-3% score improvement over any individual fold.
+Rather than relying on a single fold's model, we extract embeddings from all 5 fold models and average them. This reduces variance yielding a 1-3% score improvement over each fold.
 
 ##  References
 
