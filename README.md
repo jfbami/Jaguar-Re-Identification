@@ -143,9 +143,6 @@ This project builds on the following research:
 | Perceptual Hashing | [Implementation and Benchmarking of Perceptual Image Hash Functions](https://www.phash.org/docs/pubs/thesis_zauner.pdf) | Zauner | 2010 |
 | StratifiedGroupKFold | [Scikit-learn: Machine Learning in Python](https://arxiv.org/abs/1201.0490) | Pedregosa et al. | JMLR 2011 |
 
-##  Author
-
-**jfbami** — Built for the Jaguar Re-Identification competition on Kaggle.
 
 https://www.kaggle.com/competitions/jaguar-re-id
 
